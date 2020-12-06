@@ -4,7 +4,7 @@ FROM nginx:1.17.8-alpine
 
 COPY html /usr/share/nginx/html
 
-HEALTHCHECK --interval=30s --timeout=5s CMD wget -q -O - -U "healthcheck" http://localhost:80/ || exit 1
+HEALTHCHECK --interval=10s --timeout=5s CMD wget -q -O - -U "healthcheck" http://localhost:80/ || exit 1
 
 # The following lines are inherited from nginx base image:
 # https://github.com/nginxinc/docker-nginx/blob/master/mainline/alpine/Dockerfile
